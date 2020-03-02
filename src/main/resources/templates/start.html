@@ -3,11 +3,106 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>KnowYourLimit</title>
+<style>
+
+* {
+	box-sizing: border-box;
+	}
+
+body {
+	background-color: #4f4544;
+	background-image: radial-gradient(circle, #4f4544, #4f4544, #4f4544, black); /* Standard syntax (must be last) */ 
+	}
+
+h1{
+	color: #ffb1b0;
+	text-align: center;
+	}
+
+h2{
+	color: #ffb1b0;
+	text-align: center;
+	}
+
+#appContainer{
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+     
+}
+.drinkCard{
+	background-color: #edebec;
+	width: -webkit-fill-available;
+	}
+
+.drinkCardTXT{
+	color: #9da6a9;
+	float: left;
+	}
+	
+.drinkCardSymbol{
+	color: #9da6a9;
+	float: right;
+	}
+
+button {
+	width: -webkit-fill-available;
+	}
+
+#yourDrinksTXT{
+	float: left;
+	}
+
+#meterTXT{
+	float:right;
+	}
+
+</style>
 </head>
 <body>
-KnowYourLimit!
-<br/>
-Your DrinkID is
-
+<div id="appContainer">
+<h1>KnowYourLimit</h1>
+	<div id="drinkCardContainer">
+		<div class="drinkCard" id="beerCard">
+			<button type="button" onClick="beerMenu()">
+				<h2 class="drinkCardTXT">Beer</h2>
+				<h1 class="drinkCardSymbol">&gt;</h1>
+			</button>
+		</div>
+		
+		
+		<div class="drinkCard" id="mixedDrinkCard">
+			<button type="button" onClick="mixedDrinkMenu()">
+				<h2 class="drinkCardTXT">Mixed Drink</h2>
+				<h1 class="drinkCardSymbol">&gt;</h1>
+			</button>
+		</div>
+		
+		
+		<div class="drinkCard" id="LiquorCard">
+			<button type="button" onClick="LiquorMenu()">
+				<h2 class="drinkCardTXT">Liquor</h2>
+				<h1 class="drinkCardSymbol">&gt;</h1>
+			</button>
+		</div>
+		
+		
+		<div class="drinkCard" id="addDrinkCard">
+			<button type="button" onClick="addDrink()">
+				<h2 class="drinkCardTXT">Add a drink</h2>
+				<h1 class="drinkCardSymbol">+</h1>
+			</button>
+		</div>
+		
+	</div>
+	<div id="drunkContainer">
+	<h2 id="yourDrinksTXT">Your Drinks</h2>
+	<h2 id="meterTXT">Intoxication Meter</h2>
+	
+	
+	</div>
+	
+</div>
 </body>
 </html>
+
