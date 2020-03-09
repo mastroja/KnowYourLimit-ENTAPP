@@ -14,10 +14,20 @@ Enter 127.0.0.1:8080/start in your web browser.
 
 # Goals for Sprint 1
 
--Initial App setup  
+-Initial App setup 	&#x2713;  
 
--SpringBoot
+-SpringBoot 	&#x2713;
 
--Begin UI design (check Design Doc for UI reference)
+-Begin UI design (check Design Doc for UI reference) 	&#x2713;
 
--Start DTOs for drink categories
+-Start DTOs for drink categories https://github.com/mastroja/KnowYourLimit-ENTAPP/edit/master/README.md
+
+# Goals for Sprint 2
+
+-Finish UI design
+
+-Add new pages (i.e. Beer, Mixed Drink, Liquor, and Add Drink Pages)
+
+-Finish DTO and service stub setup
+
+-Add 'Intoxication Meter'
