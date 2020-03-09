@@ -20,7 +20,7 @@ Enter 127.0.0.1:8080/start in your web browser.
 
 -Begin UI design (check Design Doc for UI reference) 	&#x2713;
 
--Start DTOs for drink categories https://github.com/mastroja/KnowYourLimit-ENTAPP/edit/master/README.md
+-Start DTOs for drink categories &#x2713;
 
 # Goals for Sprint 2
 
