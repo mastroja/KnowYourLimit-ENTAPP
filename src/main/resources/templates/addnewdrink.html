@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>KnowYourLimit</title>
+<style>
+
+* {
+	box-sizing: border-box;
+	}
+
+body {
+	background-color: #000000;
+	background-image: url('beer.jpg');
+	}
+
+h1{
+	color: #ffb1b0;
+	text-align: center;
+	}
+
+h2{
+	color: #ffb1b0;
+	text-align: center;
+	}
+
+#appContainer{
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+     
+}
+.drinkCard{
+	background-color: #edebec;
+	width: -webkit-fill-available;
+	}
+
+.drinkCardTXT{
+	color: #9da6a9;
+	text-align: center;
+	}
+	
+button {
+	width: -webkit-fill-available;
+	}
+	
+#txtContainer{
+	margin-bottom: 75px;
+	}
+
+#yourDrinksTXT{
+	float: left;
+	}
+
+#meterTXT{
+	float:right;
+	}
+	
+.drinkTXT{
+	color: white;
+    margin-top: 10px;
+    margin-bottom: 0;
+	}
+	
+.yourDrinks{
+	background-color: #edebec;
+	width: 30%;
+	height: 125px;
+	}
+
+li {
+	margin-top:5px;
+	}
+
+p{
+	margin-top:5px;
+}
+
+</style>
+</head>
+<body>
+<div id="appContainer">
+<h1>KnowYourLimit</h1>
+	<div id="drinkCardContainer">
+		<div class="drinkCard" id="beerCard">
+			<button type="button" onClick="beerMenu()">
+				<h2 class="drinkCardTXT">Beer</h2>
+			</button>
+		</div>
+		
+		
+		<div class="drinkCard" id="mixedDrinkCard">
+			<button type="button" onClick="mixedDrinkMenu()">
+				<h2 class="drinkCardTXT">Mixed Drink</h2>
+			</button>
+		</div>
+		
+		
+		<div class="drinkCard" id="LiquorCard">
+			<button type="button" onClick="LiquorMenu()">
+				<h2 class="drinkCardTXT">Liquor</h2>
+			</button>
+		</div>
+		
+		
+		<div class="drinkCard" id="addDrinkCard">
+			<button type="button" onClick="addDrink()">
+				<h2 class="drinkCardTXT">Add a drink</h2>
+			</button>
+		</div>
+		
+	</div>
+	<div id="txtContainer">
+		<h2 id="yourDrinksTXT">Your Drinks</h2>
+		<h2 id="meterTXT">Intoxication Meter</h2>
+	</div>
+	<div id="yourdrinksContainer">
+	
+		<h3 id="numBeer" class="drinkTXT"></h3>
+		<div class="yourDrinks" id="yourBeer">
+				<p id="beer"></p>
+				<script>
+				var beers, text;
+				beers = ["Miller High Life (ABV 4.6%) 12oz", "Bud Light (ABV 4.2%) 12oz", "Hamm's (ABV 4.7%) 12oz", "PBR (ABV 4.74%) 12oz"];
+				
+				text = "<ul>";
+				beers.forEach(myFunction);
+				text += "</ul>";
+				document.getElementById("beer").innerHTML = text;
+				document.getElementById("numBeer").innerHTML = "Beers" + " (" + beers.length + ")";
+				
+				function myFunction(value) {
+				  text += "<li>" + value + "</li>";
+				} 
+				</script>
+		</div>
+		
+		<h3 id="numMix" class="drinkTXT"></h3> 
+		<div class="yourDrinks" id="yourMixedDrink">
+				<p id="mixed"></p>
+				<script>
+				var mixed, text;
+				mixed = ["Margarita (8oz)", "Old Fashioned (6oz)", "Moscow Mule (6oz)", "Bloody Mary (12oz)"];
+				
+				text = "<ul>";
+				mixed.forEach(myFunction);
+				text += "</ul>";
+				document.getElementById("mixed").innerHTML = text;
+				document.getElementById("numMix").innerHTML =  "Mixed Drinks" + " (" + mixed.length + ")";
+				
+				function myFunction(value) {
+				  text += "<li>" + value + "</li>";
+				} 
+				</script>
+		</div>
+		
+		<h3 id="numLiq" class="drinkTXT">Liquor</h3>
+		<div class="yourDrinks" id="yourLiquor">
+				<p id="liquor"></p>
+				<script>
+				var liquor, text;
+				liquor = ["Vodka (ABV 45%) 2oz", "Tequilla (ABV 40%) 2oz", "Rum (ABV 40%) 2oz", "Whiskey (ABV 50%) 2oz"];
+				
+				text = "<ul>";
+				liquor.forEach(myFunction);
+				text += "</ul>";
+				document.getElementById("liquor").innerHTML = text;
+				document.getElementById("numLiq").innerHTML = "Liquor" + " (" + liquor.length + ")";
+				
+				function myFunction(value) {
+				  text += "<li>" + value + "</li>";
+				} 
+				</script>
+		</div>
+
+		</div>
+		
+	
+</div>
+</body>
+</html>
+
