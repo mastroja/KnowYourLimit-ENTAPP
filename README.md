@@ -26,11 +26,11 @@ Enter 127.0.0.1:8080/start in your web browser.
 
 -Finish UI design
 
--Add new pages (i.e. Beer, Mixed Drink, Liquor, and Add Drink Pages)
+-Add new pages (i.e. Beer, Mixed Drink, Liquor, and Add Drink Pages) &#x2713; 
 
 -Finish DTO and service stub setup
 
--Add 'Intoxication Meter'
+-Add 'Intoxication Meter' &#x2713; 
 
 # Goals for Final 
 
