@@ -31,3 +31,17 @@ Enter 127.0.0.1:8080/start in your web browser.
 -Finish DTO and service stub setup
 
 -Add 'Intoxication Meter'
+
+# Goals for Final 
+
+-Finish UI 
+
+-Add all other page and their html/css/scripts
+
+-Complete page navigation
+
+-Finish DTO and DAO
+
+-Add feature so user can manually enter a new drink
+
+-Add 'Intoxication' notification and feature to update 'Intoxication Meter' based on users input
