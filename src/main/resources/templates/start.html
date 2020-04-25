@@ -10,12 +10,11 @@
 	}
 
 body {
-	background: rgb(2,0,36);
-	background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,0,0,1) 0%, rgba(255,177,176,1) 50%, rgba(0,0,0,1) 100%);
+
 	}
 
 h1{
-	color: #ffffff;
+	color: #ffb1b0;
 	text-align: center;
 	text-shadow: 2px 2px #000000;
 	}
@@ -92,6 +91,7 @@ p{
 	width: 90%;
     transform: rotate(-90deg);
     float: left;
+    margin-top: -230px;
 	}
 	
 meter::-webkit-meter-bar {
@@ -119,14 +119,153 @@ meter::-webkit-meter-optimum-value {
 	
 #intoxList{
     float: right;
-    margin-top: 40px;
+    margin-top: 0px;
 	}
+	
+.intoxListTxt{
+	margin-top: 70px;
+	}
+	
+	
+	
+.open-button {
+  background-color: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 280px;
+}
+
+/* The popup form - hidden by default */
+.form-popup {
+  display: none;
+  position: fixed;
+	left: 39%;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 500px;
+  padding: 10px;
+  background-color: white;
+}
+
+/* Full-width input fields */
+.form-container input[type=text], .form-container input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+
+#overlay {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.8); 
+  z-index: 2;
+}
 
 </style>
 </head>
-<body>
+<body onload="openForm()">
 <div id="appContainer">
 <h1>KnowYourLimit</h1>
+<div id="overlay"></div>
+<div class="form-popup" id="myForm">
+  <form id="intoxrating" action="" class="form-container">
+  <fieldset>
+  <h2>Rate your level of intoxication!</h2>
+	<input type="radio" id="1" name="intox" value=".1">
+	<label for="male">1</label>
+	<input type="radio" id="2" name="intox" value=".2">
+	<label for="female">2</label>
+	<input type="radio" id="3" name="intox" value=".3">
+	<label for="other">3</label>
+	<input type="radio" id="4" name="intox" value=".4">
+	<label for="male">4</label>
+	<input type="radio" id="5" name="intox" value=".5">
+	<label for="female">5</label>
+	<input type="radio" id="6" name="intox" value=".6">
+	<label for="other">6</label>
+	<input type="radio" id="7" name="intox" value=".7">
+	<label for="male">7</label>
+	<input type="radio" id="8" name="intox" value=".8">
+	<label for="female">8</label>
+	<input type="radio" id="9" name="intox" value=".9">
+	<label for="other">9</label>
+	<input type="radio" id="10" name="intox" value="1">
+	<label for="male">10</label>
+	<p><button onclick="closeForm(); getVal()" type="button" id="submit" name="getVal">submit</button></p>
+    </fieldset>
+  </form>
+</div>
+
+<script>
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+  document.getElementById("overlay").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+  document.getElementById("overlay").style.display = "none";
+}
+
+function getVal() {
+	var val = document.getElementsByName('intox'); 
+    
+    for(i = 0; i < val.length; i++) { 
+        if(val[i].checked) 
+        	alert("hi") 
+    } 
+    
+    document.getElementById(intoxMeter).value = .8
+}
+
+</script>
+
 	<div id="drinkCardContainer">
 		<div class="drinkCard" id="beerCard">
 			<button id="beerBtn" type="button">
@@ -256,7 +395,7 @@ meter::-webkit-meter-optimum-value {
 		<li class="intoxListTxt"><h3>Tipsy</h3></li>
 		<li class="intoxListTxt"><h3>Sober</h3></li>
 	</ul>
-	<meter id="intoxMeter" value="1">100%</meter>
+	<meter id="intoxMeter" value="0"></meter>
 	
 	</div>
 		
